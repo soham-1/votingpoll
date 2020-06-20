@@ -1,0 +1,12 @@
+{
+    "params":
+    {
+        "database_uri": "mysql://root:@localhost/votingpolldb",
+        "secret_key": "xyz",
+        "adminuser": "admin",
+        "adminpass": "adminpass",
+        "active_elections": 4,
+        "active_council_names": ["CR", "Sports", "E-Cell", "Music"],
+        "divisions":["D5","D10","D15","D20"]
+    }
+}

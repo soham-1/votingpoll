@@ -1,0 +1,67 @@
+{% extends 'nav.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>voting poll</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href=" {{ url_for('static', filename='applyform_fonts/material-design-iconic-font/css/material-design-iconic-font.min.css') }} ">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href=" {{ url_for('static', filename='applyform_css/style.css') }} ">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="min-height: 100vh; display: flex; align-items: center; background: url(' {{ url_for('static', filename='applyform_images/bg-registration-form-6.jpg') }} '); background-size: cover; ">
+			<div class="inner">
+				<div class="image-holder">
+					<img src=" {{ url_for('static', filename='applyform_images/1.jpg') }} " alt="">
+				</div>
+				<form method="POST">
+					<h3>apply for candidature</h3>
+					<div class="form-row">
+						<input type="text" class="form-control" name="fullname" placeholder="Full Name">
+						<input type="text" class="form-control" name="emailid" placeholder="Ves Mail">
+					</div>
+					<div class="form-row">
+						<legend>upload image here
+							
+							<input type="file"  name="imagefile" placeholder="Phone">
+						</legend>
+						<!-- <input type="text" class="form-control" placeholder="Phone"> -->
+						<div class="form-holder">
+							<select name="division" id="" class="form-control">
+								<option value="" disabled selected>Choose Your Class</option>
+								<option value="D5">Class D5</option>
+								<option value="D10">Class D10</option>
+								<option value="D15">Class D15</option>
+								<option value="D20">Class D20</option>
+							</select><br><br><br>
+							<select name="field" id="" class="form-control">
+								<option value="" disabled selected>Choose Your field</option>
+								<option value="cr">CR</option>
+								<option value="sports">sports</option>
+								<option value="music">music</option>
+								<option value="ecell">E-cell</option>
+							</select>
+							<!-- <i class="zmdi zmdi-chevron-down"></i> -->
+						</div>
+					</div>
+					<textarea name="bio" id="" placeholder="why should you be elected ?" class="form-control" style="height: 130px;"></textarea>
+					<button>submit
+						<i class="zmdi zmdi-long-arrow-right"></i>
+					</button>
+				</form>
+				
+			</div>
+		</div>
+
+		<script src=" {{ url_for('static', filename='applyform_js/jquery-3.3.1.min.js') }} "></script>
+		<script src=" {{ url_for('static', filename='applyform_js/main.js') }} "></script>
+	</body>
+</html>
+{% endblock %}

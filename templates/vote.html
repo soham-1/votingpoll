@@ -1,0 +1,53 @@
+{% extends 'nav.html' %}
+{% block body %}
+<style>
+    h1{
+        margin-top: 60px;
+        margin-left: 5px;
+    }
+</style>
+<h1>BOYS</h1>
+<hr>
+<div>
+    <div class="row">
+      {% if votedForBoy %}
+      <p style="margin-left: 20px;"> you have already voted </p>
+      {% elif nboys != 0 %}
+      {% for i in boys %}
+      <div class="col-sm-4">
+        <p class="text-center"><strong>{{ i.name }}</strong></p><br>       
+          <!-- here active is int and jinja can't concatenate str to int hence active is type casted to string -->
+          <img src="" class="img-circle person" alt="Random Name" width="255" height="255" style="margin-left: 20px;">       
+            <p style="margin-left: 20px;">{{ i.bio }}</p>
+            <p style="margin-left: 20px;"><a href="/vote?targetvote={{ i.emailid }}&boys=True&selectedfield={{ selectedfield }}"><button class="btn btn-primary" type="submit">VOTE</button></a></p>
+        </div>
+      {% endfor %}
+      {% else %}
+      <p style="margin-left: 20px;"> no candidates have applied </p>
+      {% endif %}
+    </div>
+</div>
+
+<h1>GIRLS</h1>
+<hr>
+<div>
+    <div class="row">
+      {% if votedForGirl %}
+      <p style="margin-left: 20px;"> you have already voted </p>
+      {% elif ngirls != 0 %}
+      {% for i in girls %}
+      <div class="col-sm-4">
+        <p class="text-center"><strong>{{i.name }}</strong></p><br>
+          <!-- here active is int and jinja can't concatenate str to int hence active is type casted to string -->
+          <img src="" class="img-circle person" alt="Random Name" width="255" height="255" style="margin-left: 20px;">
+            <p style="margin-left: 20px;">{{ i.bio }}</p>
+            <p style="margin-left: 20px;"><a href="/vote?targetvote={{ i.emailid }}&boys=False&selectedfield={{ selectedfield }}"><button class="btn btn-primary" type="submit">VOTE</button></a></p>
+
+        </div>
+      {% endfor %}
+      {% else %}
+      <p style="margin-left: 20px;"> no candidates have applied </p>
+      {% endif %}
+    </div>
+</div>
+{% endblock %}
